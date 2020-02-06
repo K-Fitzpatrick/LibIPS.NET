@@ -58,7 +58,7 @@ namespace CodeIsle.LibIpsNet
 
         public void Patch(string patch, string source, string target)
         {
-            using (FileStream patchStream = File.Open(patch, FileMode.Open, FileAccess.Read, FileShare.None), sourceStream = File.Open(source, FileMode.Open, FileAccess.Read, FileShare.ReadWrite), targetStream = File.Open(target, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
+            using (FileStream patchStream = File.Open(patch, FileMode.Open, FileAccess.Read, FileShare.None), sourceStream = File.Open(source, FileMode.Open, FileAccess.Read, FileShare.ReadWrite), targetStream = File.Open(target, FileMode.Create, FileAccess.Write, FileShare.ReadWrite))
             {
                 Patch(patchStream, sourceStream, targetStream);
             }
